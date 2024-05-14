@@ -4,20 +4,22 @@ export const ApiConstants = {
             return "/todo/" + userId;
         },
         FIND_NOT_COMPLETED: (userId: number) => {
-            return "/todo/findAllNotCompleted/" + userId;
+            return "/todo/findallnotcompleted/" + userId;
         },
         FIND_COMPLETED: (userId: number) => {
-            return "/todo/findAllCompleted/" + userId;
+            return "/todo/findallcompleted/" + userId;
         },
         MARK_COMPLETE: (todoId: number) => {
+
             return "/todo/" + todoId;
+
         },
         DELETE: (todoId: number) => {
             return "/todo/" + todoId;
         },
     },
     USER: {
-        SIGN_UP: "/user/signUp",
+        SIGN_UP: "/user/signup",
         FIND_ALL: "/user",
         DELETE: (userId: number) => {
             return "/user/" + userId;
@@ -25,3 +27,4 @@ export const ApiConstants = {
     },
     LOGIN: "/auth/login",
 };
+

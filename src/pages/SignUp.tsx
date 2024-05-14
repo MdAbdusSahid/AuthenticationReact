@@ -13,9 +13,21 @@ const SignUp = () => {
   let confirmPassword: any = React.useRef()
   let email: any = React.useRef()
 
+  const isStrongPassword = (value: string) => {
+    const strongPasswordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+    return strongPasswordRegex.test(value)
+  }
+
   const register = async () => {
     if (password.current.value != confirmPassword.current.value) {
       toast.info("Password does not match!!!")
+      return
+    }
+    if (!isStrongPassword(password.current.value)) {
+      toast.error(
+        "Password should contain at least 8 characters including symbols, upper and lower case letters, and numbers"
+      )
       return
     }
 
